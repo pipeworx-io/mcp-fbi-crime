@@ -1,14 +1,28 @@
-# mcp-fbi-crime
+# @pipeworx/fbi-crime
 
-FBI Crime Data Explorer MCP — UCR/NIBRS statistics
+FBI Crime Data Explorer (UCR/NIBRS) MCP — aggregated crime statistics.
 
-Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 673+ live data sources.
+Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 1394+ live data sources.
+
+Distinct from `fbiwanted` (active fugitives). This pack covers crime counts and rates at the agency, state, and national level.
 
 ## Tools
 
-| Tool | Description |
-|------|-------------|
-| `get_agency` | Fetch a single agency record by ORI. |
+- `list_agencies(state_abbr?)`
+- `get_agency(ori)`
+- `national_estimate(offense, from?, to?)`
+- `state_summary(state_abbr, offense, from?, to?)`
+- `agency_summary(ori, offense, from?, to?)`
+- `list_offense_slugs()` — valid offense slugs (no key)
+
+## Auth
+
+- **Platform key:** reuses `PLATFORM_DATAGOV_KEY` (the data.gov umbrella key).
+- **BYO:** `?_apiKey=<key>` after registering at https://api.data.gov/signup.
+
+## Data source
+
+`https://api.usa.gov/crime/fbi/cde/` — `?api_key=` query param. Upstream is intermittently flaky on DEMO_KEY; registered keys generally fare better.
 
 ## Quick Start
 
@@ -24,7 +38,7 @@ Add to your MCP client (Claude Desktop, Cursor, Windsurf, etc.):
 }
 ```
 
-Or connect to the full Pipeworx gateway for access to all 673+ data sources:
+Or connect to the full Pipeworx gateway for access to all 1394+ data sources:
 
 ```json
 {
@@ -48,7 +62,7 @@ The gateway picks the right tool and fills the arguments automatically.
 
 ## More
 
-- [All tools and guides](https://github.com/pipeworx-io/examples)
+- [Docs and guides](https://pipeworx.io/docs)
 - [pipeworx.io](https://pipeworx.io)
 
 ## License
