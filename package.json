@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-fbi-crime",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "FBI Crime Data Explorer MCP — UCR/NIBRS statistics",
   "type": "module",
   "main": "src/index.ts",
@@ -26,7 +26,7 @@
     "@cloudflare/workers-types": "^4.20260405.1"
   },
   "pipeworx": {
-    "sourceHash": "v1-d72b32b8e93fe201b8d1efbe7e46c50b31a8c5f2ceaf1354834609c7edefff9b",
-    "sourceCommit": "76aa8f5d9b5dc2f665563030647c68e661478864"
+    "sourceHash": "v1-f24c0bd8a9376282f3298548020a492a6e79df33124f8419eb58d620ed4150b7",
+    "sourceCommit": "91681e9a4a137fa0051d58e32f38c64b6334af5c"
   }
 }
