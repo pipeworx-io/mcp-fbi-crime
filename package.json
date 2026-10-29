@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-fbi-crime",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "FBI Crime Data Explorer MCP — UCR/NIBRS statistics",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-fbi-crime": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "fbi-crime"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-fbi-crime.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/fbi-crime",
   "pipeworx": {
-    "sourceHash": "v1-41489645a059aa50faec43de6be9879d5a3aa40c5fde3f4b3f026c91b96582b5",
-    "sourceCommit": "722087a9bda73f85942e8f6bbfd598544cb0d490"
+    "mode": "gateway",
+    "slug": "fbi-crime",
+    "gatewaySlug": "fbi-crime",
+    "sourceHash": "v1-4539892d5fc9dbf5d4fdd980fd1c66f4616a652680a64871114d9f79b63085ca",
+    "sourceCommit": "bb047243cf27f32453103de186b8e6a8b6a1ce79"
   }
 }
